@@ -50,9 +50,22 @@ Download the zip asset named like this:
 chatgpt-subagent-mcp-0.8.0-windows.zip
 ```
 
+## Easiest Codex-Assisted Setup
+
+This guide is meant to be readable by your Codex instance too.
+
+The simple path is:
+
+1. Download and extract the release folder.
+2. Tell Codex where that extracted folder is.
+3. Ask Codex to read the README or `CODEX_SETUP_HANDOFF.md` inside that folder and install it for you.
+4. When Codex says installation is done, restart Codex.
+5. After restart, you should be able to tell your chat to open ChatGPT.
+
+You do not normally run the `.exe` yourself. The executable is the MCP server that Codex starts after installation.
 ## Install For Codex
 
-Extract the zip somewhere normal, such as your Downloads folder or Documents folder.
+Extract the zip somewhere normal, such as your Downloads folder or Documents folder. You can either run the installer yourself, or just point Codex at the extracted folder and ask it to install from the included guide.
 
 Then run this from inside the extracted folder:
 
@@ -183,3 +196,4 @@ If ChatGPT opens but says login is required, sign in manually, then ask Codex to
 If a prompt times out, the ChatGPT response may still be running. Use a longer timeout for heavy research.
 
 If model selection or Deep Research fails, leave your preferred model or mode selected in ChatGPT manually and try delegation again.
+
