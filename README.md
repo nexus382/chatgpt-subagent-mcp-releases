@@ -1,12 +1,12 @@
-﻿# ChatGPT Subagent MCP Releases
+﻿# The Codex Buddy Releases
 
-ChatGPT Subagent MCP lets Codex hand work to your signed-in ChatGPT browser session, wait for ChatGPT to finish, and bring the answer back into Codex.
+The Codex Buddy lets Codex hand work to your signed-in ChatGPT browser session, wait for ChatGPT to finish, and bring the answer back into Codex.
 
 This public repository is for Windows release downloads and setup docs. The source code is kept in a private repository.
 
 ## What This Does
 
-ChatGPT Subagent MCP gives Codex a local bridge to ChatGPT so Codex can ask ChatGPT to handle work that is better suited for your ChatGPT account and tool surface.
+The Codex Buddy gives Codex a local bridge to ChatGPT so Codex can ask ChatGPT to handle work that is better suited for your ChatGPT account and tool surface.
 
 It can:
 
@@ -47,7 +47,7 @@ https://github.com/nexus382/chatgpt-subagent-mcp-releases/releases/latest
 Download the zip asset named like this:
 
 ```text
-chatgpt-subagent-mcp-0.8.0-windows.zip
+The-Codex-Buddy-0.8.0-windows.zip
 ```
 
 ## Easiest Codex-Assisted Setup
@@ -115,7 +115,7 @@ Use chatgpt_delegate to ask ChatGPT to research the latest MiniMax model news an
 
 Codex sees the MCP tool, chooses the right parameters, calls it, waits for the result, and then shows you the answer.
 
-Advanced users can run the MCP executable manually for debugging, but normal users should let Codex launch it.
+Advanced users can run the MCP executable manually for debugging, but normal users should let Codex launch The Codex Buddy.
 
 ## Available MCP Tools
 
@@ -196,4 +196,5 @@ If ChatGPT opens but says login is required, sign in manually, then ask Codex to
 If a prompt times out, the ChatGPT response may still be running. Use a longer timeout for heavy research.
 
 If model selection or Deep Research fails, leave your preferred model or mode selected in ChatGPT manually and try delegation again.
+
 
