@@ -70,7 +70,7 @@ Extract the zip somewhere normal, such as your Downloads folder or Documents fol
 Then run this from inside the extracted folder:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\install-codex-chatgpt-subagent.ps1
+powershell -ExecutionPolicy Bypass -File .\install-the-codex-buddy.ps1
 ```
 
 Restart Codex after the installer finishes.
@@ -196,5 +196,6 @@ If ChatGPT opens but says login is required, sign in manually, then ask Codex to
 If a prompt times out, the ChatGPT response may still be running. Use a longer timeout for heavy research.
 
 If model selection or Deep Research fails, leave your preferred model or mode selected in ChatGPT manually and try delegation again.
+
 
 
