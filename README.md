@@ -1,6 +1,6 @@
-# The Codex Buddy
+# CodexGPT MCP
 
-**The Codex Buddy** is a Windows MCP release that lets Codex hand work to your signed in ChatGPT browser session, wait for ChatGPT to finish, and bring the answer back into Codex.
+**CodexGPT MCP** is a Windows MCP release that lets Codex hand work to your signed in ChatGPT browser session, wait for ChatGPT to finish, and bring the answer back into Codex.
 
 This public repository is for **release downloads and setup documentation**. The source code is kept in a private TnT Studios development repository.
 
@@ -9,7 +9,7 @@ This public repository is for **release downloads and setup documentation**. The
 Current production release:
 
 ```text
-The Codex Buddy v1.0.0
+CodexGPT MCP v1.0.0
 ```
 
 Download it here:
@@ -18,13 +18,9 @@ Download it here:
 https://github.com/TnT-Studio-s/TnTs-CodexGPT-MCP/releases/latest
 ```
 
-Windows asset:
+Download the Windows zip asset from the latest release page.
 
-```text
-The-Codex-Buddy-1.0.0-windows.zip
-```
-
-SHA256:
+SHA256 for the v1.0.0 Windows zip:
 
 ```text
 CB67D6B466986CE0F332C477A461B59C51F3347C89175FA4F6D599BC1617BCA7
@@ -32,7 +28,7 @@ CB67D6B466986CE0F332C477A461B59C51F3347C89175FA4F6D599BC1617BCA7
 
 ## What It Does
 
-The Codex Buddy gives Codex a local MCP tool bridge into ChatGPT Web.
+CodexGPT MCP gives Codex a local MCP tool bridge into ChatGPT Web.
 
 It can:
 
@@ -75,7 +71,7 @@ Simple path:
 3. Tell Codex where the extracted folder is.
 4. Tell Codex to read `CODEX_SETUP_HANDOFF.md` and install it for you.
 5. Restart Codex when the install is done.
-6. After restart, tell Codex to open ChatGPT through The Codex Buddy.
+6. After restart, tell Codex to open ChatGPT through CodexGPT MCP.
 
 You normally do **not** run the `.exe` yourself. The executable is the MCP server that Codex starts after installation.
 
@@ -89,7 +85,7 @@ powershell -ExecutionPolicy Bypass -File .\install-the-codex-buddy.ps1
 
 Then restart Codex.
 
-The installer updates your user level Codex config so The Codex Buddy is available across Codex projects.
+The installer updates your user level Codex config so CodexGPT MCP is available across Codex projects.
 
 ## First Test
 
@@ -110,7 +106,7 @@ Use chatgpt_wait_for_login.
 Then run a smoke test:
 
 ```text
-Use chatgpt_delegate to ask ChatGPT: Reply with exactly "The Codex Buddy is working."
+Use chatgpt_delegate to ask ChatGPT: Reply with exactly "CodexGPT MCP is working."
 ```
 
 If Codex receives that exact response, the bridge is live.
@@ -142,7 +138,7 @@ Main tools:
 
 ## Speed Modes
 
-The Codex Buddy cannot make ChatGPT search or think faster. That part takes as long as ChatGPT takes.
+CodexGPT MCP cannot make ChatGPT search or think faster. That part takes as long as ChatGPT takes.
 
 What it can make faster is the local handoff between Codex and ChatGPT.
 
@@ -168,7 +164,7 @@ Windows app automation exists as an experimental target in the private source, b
 
 ## Safety Notes
 
-The Codex Buddy never asks for your ChatGPT password.
+CodexGPT MCP never asks for your ChatGPT password.
 
 You sign in directly inside the ChatGPT browser window.
 
@@ -178,10 +174,10 @@ Delegated prompts are sent to ChatGPT through your own signed in account.
 
 ## TnT Studios
 
-This is the first live TnT Studios production release of The Codex Buddy.
+This is the first live TnT Studios production release of CodexGPT MCP.
 
 Use Codex for coding.
 
 Use ChatGPT for research.
 
-Let The Codex Buddy bridge the two.
+Let CodexGPT MCP bridge the two.
