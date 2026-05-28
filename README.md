@@ -1,343 +1,187 @@
-# CodexGPT MCP
+# The Codex Buddy
 
-**CodexGPT MCP** lets Codex hand research, information gathering, and long-form reasoning work to your signed-in ChatGPT browser session, wait for ChatGPT to finish, and bring the answer back into Codex.
+**The Codex Buddy** is a Windows MCP release that lets Codex hand work to your signed in ChatGPT browser session, wait for ChatGPT to finish, and bring the answer back into Codex.
 
-This public repository is for **Windows release downloads** and **setup documentation**.
+This public repository is for **release downloads and setup documentation**. The source code is kept in a private TnT Studios development repository.
 
-The source code is kept in a private repository.
+## Latest Release
 
-## What This Is
+Current production release:
 
-CodexGPT MCP is a local MCP bridge that allows Codex to use your ChatGPT account through a managed browser session.
+```text
+The Codex Buddy v1.0.0
+```
 
-The point of this project is simple:
+Download it here:
 
-**Codex can focus on building your game, app, or software while ChatGPT handles the heavy research and information gathering.**
+```text
+https://github.com/TnT-Studio-s/TnTs-CodexGPT-MCP/releases/latest
+```
 
-Instead of having Codex spend project time and context on large research jobs, CodexGPT MCP lets Codex send those jobs to ChatGPT through your normal ChatGPT account. ChatGPT does the research, reasoning, or summarizing, then Codex gets the finished answer back and can keep working with better information.
+Windows asset:
 
-In a nutshell:
+```text
+The-Codex-Buddy-1.0.0-windows.zip
+```
 
-**Codex can control a managed ChatGPT browser session, ask it questions, wait for answers, and pull those answers back into your Codex project workflow.**
+SHA256:
 
-This makes CodexGPT MCP one of the best ways to improve research and information gathering for Codex projects while keeping Codex focused on the actual build.
+```text
+CB67D6B466986CE0F332C477A461B59C51F3347C89175FA4F6D599BC1617BCA7
+```
 
-## Why Use This?
+## What It Does
 
-Codex is great at:
+The Codex Buddy gives Codex a local MCP tool bridge into ChatGPT Web.
 
-* Reading and editing your project files.
-* Writing code.
-* Fixing bugs.
-* Refactoring.
-* Running commands.
-* Working directly inside your app, game, or software project.
-
-ChatGPT is often better for:
-
-* Deep research.
-* Web searching.
-* Long-form reasoning.
-* Summarizing documentation.
-* Comparing tools, libraries, models, APIs, or frameworks.
-* Drafting research briefs.
-* Gathering outside information before Codex writes code.
-
-CodexGPT MCP connects those strengths together.
-
-It lets Codex offload large research jobs to ChatGPT, then bring the results back into your project. That means Codex can keep its attention on coding while ChatGPT handles the outside information work.
-
-## What It Can Do
-
-CodexGPT MCP can:
+It can:
 
 * Open or reuse a managed ChatGPT browser session.
 * Detect when you need to sign in.
-* Wait while you complete ChatGPT login manually.
+* Wait while you sign in manually.
 * Start a new ChatGPT conversation.
 * Send prompts from Codex to ChatGPT.
 * Wait for ChatGPT to finish responding.
-* Read the final ChatGPT answer.
-* Return that answer back into Codex.
-* Use faster local handoff timing with `CHATGPT_SPEED_MODE=max_speed`.
-* Attempt browser UI features such as model selection and Deep Research when your ChatGPT account exposes them.
-
-Good use cases include:
-
-* Researching a library before Codex integrates it.
-* Asking ChatGPT to compare APIs or SDKs.
-* Having ChatGPT summarize documentation for Codex.
-* Letting ChatGPT search the web for current information.
-* Creating research briefs for game, app, or software development.
-* Offloading long reasoning tasks so Codex can stay focused on implementation.
-* Gathering project information without burning as much Codex-side effort on research.
+* Bring the final response back into Codex.
+* Try UI based model selection and Deep Research when your ChatGPT account exposes those controls.
+* Export the latest response to a file.
+* Extract links from responses.
+* Run health checks with clear fix instructions.
+* Build prompt templates for research, code review, comparison, and summarizing.
+* Retry the last delegated task safely.
 
 ## How It Works
 
 At a high level:
 
-1. Codex starts the local MCP server.
-2. The MCP server opens or connects to a managed ChatGPT browser window.
+1. Codex starts the local MCP server from the extracted release folder.
+2. The MCP server opens or attaches to a managed ChatGPT browser window.
 3. You sign in to ChatGPT manually the first time.
 4. Codex calls MCP tools such as `chatgpt_delegate`.
-5. The MCP server sends the prompt to ChatGPT.
-6. ChatGPT works through your normal signed-in account.
-7. The MCP server waits for the response to finish.
-8. The final answer is read back and returned to Codex.
+5. The MCP server sends the prompt to ChatGPT Web.
+6. ChatGPT does the research, reasoning, or answering inside your normal signed in account.
+7. The MCP server reads the final response and returns it to Codex.
 
-This is **browser automation**, not an official ChatGPT API.
+This is browser automation, not an official ChatGPT API. That means ChatGPT UI changes can affect behavior, and you should keep normal account safety in mind.
 
-That means CodexGPT MCP uses your normal ChatGPT web session and can be affected by ChatGPT UI changes.
+## Easiest Setup With Codex
 
-## Download
+This guide is meant to be read by your Codex instance too.
 
-Get the latest Windows release here:
+Simple path:
 
-```text
-https://github.com/nexus382/chatgpt-subagent-mcp-releases/releases/latest
-```
-
-Download the Windows zip asset.
-
-It may be named like this:
-
-```text
-CodexGPT-MCP-0.8.0-windows.zip
-```
-
-Older releases may still use the previous package name:
-
-```text
-The-Codex-Buddy-0.8.0-windows.zip
-```
-
-## Easiest Codex-Assisted Setup
-
-This guide is written so both humans and Codex can understand it.
-
-The simple setup path is:
-
-1. Download the latest Windows release zip.
-2. Extract the release folder somewhere normal, such as Downloads or Documents.
+1. Download the latest Windows zip.
+2. Extract the folder somewhere normal, like Downloads or Documents.
 3. Tell Codex where the extracted folder is.
-4. Ask Codex to read the README or `CODEX_SETUP_HANDOFF.md` inside that folder.
-5. Ask Codex to install CodexGPT MCP for you.
-6. Restart Codex after installation.
-7. After restart, ask Codex to open ChatGPT through the MCP.
+4. Tell Codex to read `CODEX_SETUP_HANDOFF.md` and install it for you.
+5. Restart Codex when the install is done.
+6. After restart, tell Codex to open ChatGPT through The Codex Buddy.
 
-You do not normally run the `.exe` yourself.
+You normally do **not** run the `.exe` yourself. The executable is the MCP server that Codex starts after installation.
 
-The executable is the MCP server that Codex starts after installation.
+## Manual Install
 
-## Manual Install For Codex
-
-Extract the zip somewhere normal, such as:
-
-```text
-Downloads
-Documents
-C:\Tools
-```
-
-Then open PowerShell inside the extracted folder and run:
+After extracting the zip, open PowerShell in the extracted folder and run:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\install-the-codex-buddy.ps1
 ```
 
-Restart Codex after the installer finishes.
+Then restart Codex.
 
-The installer updates your user-level Codex config so CodexGPT MCP is available across Codex projects.
+The installer updates your user level Codex config so The Codex Buddy is available across Codex projects.
 
-## First Run
+## First Test
 
-After restarting Codex, ask Codex to open ChatGPT through the MCP:
+After restarting Codex, ask Codex:
 
 ```text
 Use chatgpt_open.
 ```
 
-If ChatGPT is not signed in, a browser window should open.
+If ChatGPT asks you to sign in, sign in manually in the browser window.
 
-Sign in manually.
-
-Then ask Codex to wait for login:
+Then ask Codex:
 
 ```text
 Use chatgpt_wait_for_login.
 ```
 
-After login is ready, test a normal delegation:
+Then run a smoke test:
 
 ```text
-Use chatgpt_delegate to ask ChatGPT: Reply with exactly "MCP smoke test passed."
+Use chatgpt_delegate to ask ChatGPT: Reply with exactly "The Codex Buddy is working."
 ```
 
-If Codex receives that exact phrase back, CodexGPT MCP is working.
+If Codex receives that exact response, the bridge is live.
 
 ## Are The Tools Commands?
 
-The `chatgpt_*` tools are MCP tools.
+The `chatgpt_*` tools are MCP tools, not normal PowerShell commands.
 
-They are mainly for Codex or another MCP-capable model client to call.
+You use them by asking Codex to call them. Codex sees the tools, chooses parameters, runs them, waits for the result, and shows you the answer.
 
-They are not normal PowerShell commands that you type directly like:
+Main tools:
 
-```powershell
-git status
-```
+| Tool | What it does |
+| --- | --- |
+| `chatgpt_open` | Opens or attaches to the managed ChatGPT browser session. |
+| `chatgpt_status` | Reports browser, login, and readiness state. |
+| `chatgpt_wait_for_login` | Waits while you sign in manually. |
+| `chatgpt_new_chat` | Starts a clean ChatGPT conversation. |
+| `chatgpt_select_model` | Attempts UI based model selection by label. |
+| `chatgpt_enable_deep_research` | Attempts to enable visible Deep Research UI. |
+| `chatgpt_get_last_response` | Reads the latest visible ChatGPT assistant response. |
+| `chatgpt_delegate` | Sends a prompt and waits for the completed response. |
+| `chatgpt_retry_last` | Repeats the last delegated task. |
+| `chatgpt_export_last_response` | Saves the latest response as md, txt, or json. |
+| `chatgpt_extract_links` | Extracts structured URLs from text or the latest response. |
+| `chatgpt_health_check` | Checks setup and gives exact fix guidance. |
+| `chatgpt_prompt_template` | Builds reusable prompts for common workflows. |
+| `chatgpt_client_info` | Reports backend mode and capability flags. |
 
-In practice, you use them by asking Codex to call them.
+## Speed Modes
 
-Example:
+The Codex Buddy cannot make ChatGPT search or think faster. That part takes as long as ChatGPT takes.
 
-```text
-Use chatgpt_delegate to ask ChatGPT to research the latest MiniMax model news and bring the answer back here.
-```
+What it can make faster is the local handoff between Codex and ChatGPT.
 
-Codex sees the MCP tool, chooses the right parameters, calls it, waits for the result, and then shows you the answer.
-
-Advanced users can run the MCP executable manually for debugging, but normal users should let Codex launch CodexGPT MCP.
-
-## Available MCP Tools
-
-These are the current tool names Codex can use:
-
-| Tool                           | What it does                                                    |
-| ------------------------------ | --------------------------------------------------------------- |
-| `chatgpt_open`                 | Opens or attaches to the managed ChatGPT browser session.       |
-| `chatgpt_status`               | Reports whether the browser is ready, signed in, and usable.    |
-| `chatgpt_wait_for_login`       | Waits while the user signs in manually.                         |
-| `chatgpt_new_chat`             | Starts a clean ChatGPT conversation.                            |
-| `chatgpt_select_model`         | Attempts to select a visible ChatGPT model by label.            |
-| `chatgpt_enable_deep_research` | Attempts to enable Deep Research in the ChatGPT UI.             |
-| `chatgpt_get_last_response`    | Reads the latest visible ChatGPT assistant response.            |
-| `chatgpt_delegate`             | Sends a prompt to ChatGPT and waits for the completed response. |
-| `chatgpt_client_info`          | Reports backend mode and capability flags.                      |
-
-Most users will mainly use:
-
-```text
-chatgpt_delegate
-```
-
-## Browser Mode
-
-Browser mode is the recommended and supported backend.
-
-It uses a managed browser profile so your ChatGPT login can persist between runs.
-
-The first time, you sign in manually.
-
-After that, Codex can usually reuse the session.
-
-Browser mode is currently the best path for:
-
-* Normal prompt delegation.
-* Response readback.
-* New chats.
-* Deep Research attempts.
-* Faster handoff timing.
-
-## Speed Mode
-
-CodexGPT MCP cannot make ChatGPT itself think, search, or run Deep Research faster.
-
-Those parts take however long ChatGPT takes.
-
-What it can make faster is the local handoff between Codex and ChatGPT:
-
-* Detecting when ChatGPT has stopped generating.
-* Returning the completed response back to Codex sooner.
-* Reducing local UI settle waits.
-
-To opt into faster local polling, set this in the MCP `.env` file:
-
-```text
-CHATGPT_SPEED_MODE=max_speed
-```
-
-The default mode is safer and more conservative:
+Default stable mode:
 
 ```text
 CHATGPT_SPEED_MODE=token_saver
 ```
 
-Use `max_speed` when you want faster handoff timing.
+Faster local polling mode:
 
-Use `token_saver` when you want the more conservative default behavior.
+```text
+CHATGPT_SPEED_MODE=max_speed
+```
 
-## Current Limitations
+Use max speed when you want Codex to notice completed ChatGPT responses as quickly as possible.
 
-CodexGPT MCP is powerful, but it is still an unofficial automation bridge.
+## Current Production Path
 
-Important limitations:
+Browser mode is the supported production path right now.
 
-* It is not an official ChatGPT control API.
-* It uses browser automation.
-* ChatGPT UI changes can break selectors.
-* Model selection depends on what is visible in your ChatGPT account.
-* Deep Research depends on whether your ChatGPT account exposes it.
-* Heavy research still takes as long as ChatGPT needs.
-* The Windows app backend is experimental and not recommended for public use yet.
-* Browser mode is the production path right now.
+Windows app automation exists as an experimental target in the private source, but public users should use browser mode until parity is proven.
 
 ## Safety Notes
 
-CodexGPT MCP does not ask for your ChatGPT password.
+The Codex Buddy never asks for your ChatGPT password.
 
 You sign in directly inside the ChatGPT browser window.
 
-Prompts delegated through this MCP are sent to ChatGPT through your own signed-in ChatGPT account.
+Do not share browser profile folders that contain login state.
 
-Do not share a browser profile folder that contains your login state.
+Delegated prompts are sent to ChatGPT through your own signed in account.
 
-## Quick Troubleshooting
+## TnT Studios
 
-### Codex does not see the tools
-
-Restart Codex after running the installer.
-
-### ChatGPT opens but says login is required
-
-Sign in manually, then ask Codex to call:
-
-```text
-chatgpt_wait_for_login
-```
-
-### Prompt times out
-
-The ChatGPT response may still be running.
-
-Use a longer timeout for heavy research or Deep Research tasks.
-
-### Model selection fails
-
-Leave your preferred model selected manually in ChatGPT, then try delegation again.
-
-### Deep Research fails
-
-Make sure Deep Research is available in your ChatGPT account and visible in the browser UI.
-
-If it still fails, start the Deep Research mode manually in ChatGPT and then retry delegation.
-
-## Recommended First Test
-
-After install and login, use this test from Codex:
-
-```text
-Use chatgpt_delegate to ask ChatGPT: Reply with exactly "CodexGPT MCP is working."
-```
-
-If Codex receives that answer back, the bridge is live.
-
-## Summary
-
-CodexGPT MCP gives Codex a way to hand research and information gathering to ChatGPT, then bring the finished answer back into your Codex workflow.
+This is the first live TnT Studios production release of The Codex Buddy.
 
 Use Codex for coding.
 
 Use ChatGPT for research.
 
-Let CodexGPT MCP bridge the two.
+Let The Codex Buddy bridge the two.
