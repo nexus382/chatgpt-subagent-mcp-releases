@@ -18,12 +18,16 @@ Download it here:
 https://github.com/TnT-Studio-s/TnTs-CodexGPT-MCP/releases/latest
 ```
 
-Download the Windows zip asset from the latest release page.
-
-SHA256 for the v1.0.0 Windows zip:
+Windows asset:
 
 ```text
-CB67D6B466986CE0F332C477A461B59C51F3347C89175FA4F6D599BC1617BCA7
+CodexGPT-MCP-1.0.0-windows.zip
+```
+
+SHA256:
+
+```text
+1BC4685978AB38AC4D392C46E02CA7087E74A0344CF33F3D4C2E4D1410316F9A
 ```
 
 ## What It Does
@@ -80,7 +84,7 @@ You normally do **not** run the `.exe` yourself. The executable is the MCP serve
 After extracting the zip, open PowerShell in the extracted folder and run:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\install-the-codex-buddy.ps1
+powershell -ExecutionPolicy Bypass -File .\install-codexgpt-mcp.ps1
 ```
 
 Then restart Codex.
